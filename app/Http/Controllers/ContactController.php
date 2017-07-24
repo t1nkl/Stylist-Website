@@ -7,12 +7,10 @@ use Mail;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
 
-use App\Models\Service;
+use App\Models\{Contact, Service};
 
 class ContactController extends Controller
 {
@@ -51,11 +49,6 @@ class ContactController extends Controller
         $contact->email = $request->input('email');
         $contact->content = $request->input('content');
 
-        // Mail::send('email.mail', ['name' => $contact->name, 'phone' => $contact->phone, 'email' => $contact->email, 'url' => $contact->url, 'content' => $contact->content,], function ($m){
-        //     $m->from('hello@app.com', 'LeoStudio');
-        //     $m->to('gudvon@gmail.com')->subject('LeoStudio Contact Form');
-        // }); 
-
         if ($contact->save()){
             try {
                 // Mail::send('emails.email', ['name' => $contact->name, 'phone' => $contact->phone, 'url' => $contact->url, 'email' => $contact->email, 'content' => $contact->content, 'date' => date('Y-m-d H:i:s')], function ($message) {
@@ -66,11 +59,7 @@ class ContactController extends Controller
             } catch (\Exception $e) {
                 return response()->json(['error' => true, 'msg' => $valid_url], 400);
             }
-        }   
-
-        // if ($contact->save()){
-        //     return response()->json(200); 
-        // }      
+        }      
     }
 
     /**

@@ -93,14 +93,14 @@ class ArticleCrudController extends CrudController
                                 'label' => 'Текст',
                                 'type' => 'tinymce',
                             ]);
-        $this->crud->addField([    // Image
+        $this->crud->addField([
                                 'name' => 'image',
                                 'label' => 'Картинка',
                                 'type' => 'image',
                                 'upload' => true,
                                 'crop' => false,
                             ]);
-        $this->crud->addField([    // SELECT
+        $this->crud->addField([
                                 'label' => 'Категория',
                                 'type' => 'select2',
                                 'name' => 'category_id',
@@ -123,7 +123,7 @@ class ArticleCrudController extends CrudController
                                     'class' => 'form-group col-md-4',
                                 ],
                             ]);
-        $this->crud->addField([    // ENUM
+        $this->crud->addField([
                                 'name' => 'status',
                                 'label' => 'Статус',
                                 'type' => 'enum',

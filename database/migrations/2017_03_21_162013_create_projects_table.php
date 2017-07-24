@@ -21,7 +21,6 @@ class CreateProjectsTable extends Migration
             $table->integer('depth')->unsigned()->nullable();
             $table->text('title')->nullable();
             $table->text('description')->nullable();
-            $table->longText('content')->nullable();
             $table->string('image')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->timestamps();

@@ -87,11 +87,6 @@ class VlogCrudController extends CrudController
                                 'type' => 'text',
                                 'attributes' => ['readonly' => 'readonly'],
                             ], 'update');
-        // $this->crud->addField([
-        //                         'name' => 'description',
-        //                         'label' => 'Description',
-        //                         'type' => 'textarea',
-        //                     ]);
         $this->crud->addField([
                                 'name' => 'content',
                                 'label' => 'Текст',
@@ -102,7 +97,7 @@ class VlogCrudController extends CrudController
                                 'label' => 'Ссылка на видео в Youtube или Vimeo',
                                 'type' => 'text',
                             ]);
-        $this->crud->addField([    // SELECT
+        $this->crud->addField([
                                 'label' => 'Категория',
                                 'type' => 'select2',
                                 'name' => 'category_id',
@@ -125,7 +120,7 @@ class VlogCrudController extends CrudController
                                     'class' => 'form-group col-md-6',
                                 ],
                             ]);
-        $this->crud->addField([    // ENUM
+        $this->crud->addField([
                                 'name' => 'status',
                                 'label' => 'Статус',
                                 'type' => 'enum',

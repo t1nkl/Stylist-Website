@@ -31,22 +31,22 @@ class ContactCrudController extends CrudController
         
 
         // ------ CRUD FIELDS
-        $this->crud->addField([    // TEXT
+        $this->crud->addField([
                                 'name' => 'name',
                                 'label' => 'Name',
                                 'type' => 'text',
                             ]);
-        $this->crud->addField([    // TEXT
+        $this->crud->addField([
                                 'name' => 'email',
                                 'label' => 'Email',
                                 'type' => 'text',
                             ]);
-        $this->crud->addField([    // TEXT
+        $this->crud->addField([
                                 'name' => 'phone',
                                 'label' => 'Phone',
                                 'type' => 'text',
                             ]);
-        $this->crud->addField([    // TEXT
+        $this->crud->addField([
                                 'name' => 'content',
                                 'label' => 'Content',
                                 'type' => 'text',

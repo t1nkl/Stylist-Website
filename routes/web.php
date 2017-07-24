@@ -10,12 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('login', function () {
-    return redirect('admin/login');
-});
-Route::get('register', function () {
-    return redirect('admin/register');
-});
 
 Route::get('/', 'HomeController@index');
 Route::resource('blog', 'BlogController');

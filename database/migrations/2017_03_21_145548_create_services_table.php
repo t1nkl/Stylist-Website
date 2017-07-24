@@ -19,11 +19,10 @@ class CreateServicesTable extends Migration
             $table->integer('lft')->unsigned()->nullable();
             $table->integer('rgt')->unsigned()->nullable();
             $table->integer('depth')->unsigned()->nullable();
-            $table->text('title');
+            $table->text('title')->nullable();
             $table->string('slug')->default('');
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
-            $table->string('image')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->timestamps();
         });

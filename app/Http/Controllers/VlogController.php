@@ -7,10 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Vlog;
-use App\Models\Service;
-use App\Models\Category;
-
+use App\Models\{Vlog, Service, Category};
 
 class VlogController extends Controller
 {
@@ -43,6 +40,5 @@ class VlogController extends Controller
         $services = Service::all();
         return view('vlog', compact('services', 'vlogs', 'categorys'));
     }
-
 
 }

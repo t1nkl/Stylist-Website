@@ -19,9 +19,8 @@ class CreateAboutsTable extends Migration
             $table->integer('lft')->unsigned()->nullable();
             $table->integer('rgt')->unsigned()->nullable();
             $table->integer('depth')->unsigned()->nullable();
-            $table->text('title');
+            $table->text('title')->nullable();
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
             $table->string('icon')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->timestamps();

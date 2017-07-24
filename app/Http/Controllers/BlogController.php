@@ -10,10 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
 
-use App\Models\Article;
-use App\Models\Category;
-use App\Models\Tag;
-use App\Models\Service;
+use App\Models\{Article, Category, Tag, Service};
 
 class BlogController extends Controller
 {
