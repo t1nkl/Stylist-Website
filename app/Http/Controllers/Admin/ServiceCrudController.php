@@ -63,6 +63,7 @@ class ServiceCrudController extends CrudController
                                 'name' => 'content',
                                 'label' => 'Текст',
                                 'type' => 'ckeditor',
+                                'extra_plugins' => ['oembed', 'widget', 'justify', 'preview'],
                             ]);
         $this->crud->addField([
                                 'name' => 'status',

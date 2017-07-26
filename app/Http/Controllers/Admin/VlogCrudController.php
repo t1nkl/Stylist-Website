@@ -89,7 +89,8 @@ class VlogCrudController extends CrudController
         $this->crud->addField([
                                 'name' => 'content',
                                 'label' => 'Текст',
-                                'type' => 'tinymce',
+                                'type' => 'ckeditor',
+                                'extra_plugins' => ['oembed', 'widget', 'justify', 'preview'],
                             ]);
         $this->crud->addField([
                                 'name' => 'video',
