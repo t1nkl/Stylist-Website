@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
-use Illuminate\Support\Facades\DB;
-
 use App\Models\{Vlog, Service, Category};
 
 class VlogController extends Controller
@@ -18,7 +14,7 @@ class VlogController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        //
     }
 
     /**
@@ -28,17 +24,18 @@ class VlogController extends Controller
      */
     public function index( Request $request ) 
     {   
-        $vlogs = Vlog::where('status', 'PUBLISHED')
-            ->orderBy('rgt')->paginate(3);
+        $all_vlogs = Vlog::where('status', 'PUBLISHED')->orderBy('date', "desc")->get()->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
         if($request->ajax()) {
             return [
-                'vlogs' => view('vlog_ajax')->with(compact('vlogs'))->render(),
-                'next_page' => $vlogs->nextPageUrl()
+                'all_vlogs' => view('vlog_ajax')->with(compact('all_vlogs'))->render(),
+                'next_page' => $page+1,
+                'less_then' => count($all_vlogs) < 3
             ];
         }
         $categorys = Category::orderBy('created_at', "asc")->get();
         $services = Service::all();
-        return view('vlog', compact('services', 'vlogs', 'categorys'));
+        
+        return view('vlog', compact('services', 'all_vlogs', 'categorys'));
     }
 
 }

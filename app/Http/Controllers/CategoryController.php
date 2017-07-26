@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Date\Date;
-
-use App\Models\{Article, Category, Tag, Service};
+use App\Models\{Article, Category, Tag, Service, Vlog};
 
 class CategoryController extends Controller
 {
@@ -20,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        // return view('category');
+        //
     }
 
     /**
@@ -53,10 +47,11 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::where('slug', $id)->first();
-        $articles = $category->articles;
+        $all_data = $category->articles->merge($category->vlogs)->sortByDesc('date')->all();
         $categorys = Category::orderBy('created_at', "asc")->get();
         $services = Service::all();
-        return view('category', compact('articles', 'category', 'categorys', 'services'));
+        
+        return view('category', compact('all_data', 'category', 'categorys', 'services'));
     }
 
     /**

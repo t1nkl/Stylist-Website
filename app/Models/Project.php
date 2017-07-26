@@ -39,7 +39,7 @@ class Project extends Model
 
     public static function getPaginatePortfolio()
     {
-        return self::published()->paginate(8);
+        return self::published()->get();
     }
 
     /*

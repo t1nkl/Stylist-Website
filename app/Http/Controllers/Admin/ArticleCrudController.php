@@ -112,7 +112,7 @@ class ArticleCrudController extends CrudController
                                     'class' => 'form-group col-md-4',
                                 ],
                             ]);
-        $this->crud->addField([       // Select2Multiple = n-n relationship (with pivot table)
+        $this->crud->addField([
                                 'label' => 'Теги',
                                 'type' => 'select2_multiple',
                                 'name' => 'tags', // the method that defines the relationship in your Model

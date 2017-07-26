@@ -24,25 +24,22 @@
 @section('style_javascript')
 <script type="text/javascript">
     function fetchPosts() {
-        $('.load-more').hide();
-        $('.load').addClass('loading');
+        event.preventDefault();
         var page = $('.endless-pagination').data('next-page');
-        if(page !== null) {
-            $.get(page, function(data){
-                window.Laravel = {!! json_encode([
-                    'csrfToken' => csrf_token(),
-                    ]) !!};
-                $('.vlogs').append(data.vlogs);
+        $.ajax({
+            type: "GET",
+            url: '/vlog',
+            data: {page: page},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){
+                if(data.less_then){$('.load-more').hide();}
                 $('.endless-pagination').data('next-page', data.next_page);
-                $('.load').removeClass('loading');
-            });
-        }
-        else{
-            $('.load-more').hide();
-            $('.load').removeClass('loading');
-
-        }
-    }
+                $('.all_vlogs').append(data.all_vlogs);
+            }
+        });
+    };
     jQuery('#newsletter-form').submit( function mailCallback( event ) {
         event.preventDefault();
         var email = $('#email').val();
@@ -81,31 +78,31 @@
             <p class="description-bl">@lang('messages.vlog_page.descr')</p>
         </header>
     </div>
-    <div class="col-md-9 vlog-posts">
-    @foreach($vlogs as $vlog)
-        <div class="col-md-12 vlog-single-post endless-pagination vlogs" data-next-page="{{ $vlogs->nextPageUrl() }}">
-            <iframe width="100%" height="500px" src="{{$vlog->video}}" frameborder="0" allowfullscreen></iframe>
+    <div class="col-md-9 vlog-posts endless-pagination all_vlogs" data-next-page="2">
+    @foreach($all_vlogs as $vlog)
+        <div class="col-md-12 vlog-single-post">
+            <iframe width="100%" height="500px" src="{{ $vlog->video }}" frameborder="0" allowfullscreen></iframe>
             <div class="col-md-12 vlog-post-text">
-                <h2 class="vlog-post-heading">{{$vlog->title}}</h2>
+                <h2 class="vlog-post-heading">{{ $vlog->title }}</h2>
                 <span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ Date::parse($vlog->date)->format('j F, Y') }}</span>
-                <p class="vlog-content">{!!$vlog->content!!}</p>
+                <p class="vlog-content">{!! $vlog->description !!}</p>
                 <!-- <span class="vlog-comment">0 Comments</span> -->
-                <div class="social-media-vl">
+                <!-- <div class="social-media-vl"> -->
                     <!-- <a href="#" class="sm-link-ft"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#" class="sm-link-ft"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     <a href="#" class="sm-link-ft"><i class="fa fa-vk" aria-hidden="true"></i></a>
                     <a href="#" class="sm-link-ft"><i class="fa fa-youtube" aria-hidden="true"></i></a> -->
-                </div>  
+                <!-- </div>   -->
             </div>
         </div>
     @endforeach
 
-    {{--{!! $vlogs->render() !!}--}}
+        {{--{!! $all_vlogs->render() !!}--}}
 
-    <div class="load-more">
-        <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-blog">Загрузить еще</p></a>
-    </div>
-    <div class="load"></div>
+        <div class="load-more">
+            <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-blog">Загрузить еще</p></a>
+        </div>
+        <div class="load"></div>
     </div>
     <div class="col-md-3 blog-sidebar">
         <div class="categories">
@@ -113,7 +110,7 @@
             <ul class="cat-list">
                 @foreach($categorys as $category)
                 <li class="cat-list-item">
-                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{count($category->articles)}})</span></a>
+                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{ $category->countAllData }})</span></a>
                 </li>
                 @endforeach
             </ul>
@@ -126,19 +123,19 @@
                 <div class="desctiption-short">
                     <a href="/blog/{{$lastblog->slug}}"><h5 class="heading-recent-posts">{{$lastblog->title}}</h5></a>
                     <span class="dates">{{ Date::parse($lastblog->date)->format('j F, Y') }}</span>
-                    <span class="comments">0 Комментариев</span>
+                    <!-- <span class="comments">0 Комментариев</span> -->
                 </div>
             </div>
             @endforeach
         </div>
-        <div class="tags">
+        <!-- <div class="tags">
             <h4 class="tags-heading">Теги</h4>
             <div class="tagcloud">
                 @foreach(App\Models\Tag::getLastTag() as $lasttag)
                 <a href="/tag/{{$lasttag->slug}}" class="tag-link">{{$lasttag->name}}</a>
                 @endforeach
             </div>
-        </div>
+        </div> -->
         <div class="facebook">
             <h4 class="facebook-heading">Facebook</h4>
             <img src="/img/facebook-subs.png" alt="" class="img-responsive">

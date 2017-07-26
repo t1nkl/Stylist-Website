@@ -15,14 +15,9 @@ class CreateVlogsTable extends Migration
     {
         Schema::create('vlogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('parent_id')->default(0)->nullable();
-            $table->integer('lft')->unsigned()->nullable();
-            $table->integer('rgt')->unsigned()->nullable();
-            $table->integer('depth')->unsigned()->nullable();
             $table->integer('category_id')->unsigned();
             $table->text('title')->nullable();
-            $table->text('description')->nullable();
-            $table->longText('content')->nullable();
+            $table->longText('description')->nullable();
             $table->text('video')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->date('date');

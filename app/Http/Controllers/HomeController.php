@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-
 use App\Models\{About, Project, Service, ReviewShow, Article};
 
 class HomeController extends Controller
@@ -18,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        //
     }
 
     /**
@@ -31,16 +29,18 @@ class HomeController extends Controller
         Date::setLocale('ru');
         $abouts = About::getPublishedAbout();
         $services = Service::orderBy('rgt')->get();
-        $portfolios = Project::getPaginatePortfolio();
+        $all_portfolios = Project::getPaginatePortfolio()->forPage($page = request()->has('page') ? request()->page : 1, 8)->all();
         if($request->ajax()) {
             return [
-                'portfolios' => view('home_portfolios_ajax')->with(compact('portfolios'))->render(),
-                'next_page' => $portfolios->nextPageUrl()
+                'all_portfolios' => view('home_portfolios_ajax')->with(compact('all_portfolios'))->render(),
+                'next_page' => $page+1,
+                'less_then' => count($all_portfolios) < 8
             ];
         }
         $reviewshows = ReviewShow::all();
         $blogs = Article::getLastBlog(3);
-        return view('home', compact('abouts', 'portfolios', 'services', 'reviewshows', 'blogs'));
+        
+        return view('home', compact('abouts', 'all_portfolios', 'services', 'reviewshows', 'blogs'));
     }
 
 }

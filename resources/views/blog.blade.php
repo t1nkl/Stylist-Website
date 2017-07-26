@@ -27,21 +27,22 @@
         $('.load-more').hide();
         $('.load').addClass('loading');
         var page = $('.endless-pagination').data('next-page');
-        if(page !== null) {
-            $.get(page, function(data){
-                window.Laravel = {!! json_encode([
-                    'csrfToken' => csrf_token(),
-                    ]) !!};
-                $('.articles').append(data.articles);
+        $.ajax({
+            type: "GET",
+            url: '/blog',
+            data: {page: page},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){
+                if(data.less_then){$('.load-more').hide();}
                 $('.endless-pagination').data('next-page', data.next_page);
+                $('.all_articles').append(data.all_articles);
+                $('.load-more').hide();
                 $('.load').removeClass('loading');
-            });
-        }
-        else{
-            $('.load-more').hide();
-            $('.load').removeClass('loading');
-        }
-    }
+            }
+        });
+    };
     jQuery('#newsletter-form').submit( function mailCallback( event ) {
         event.preventDefault();
         var email = $('#email').val();
@@ -80,8 +81,8 @@
             <p class="description-bl">@lang('messages.blog_page.descr')</p>
         </header>
     </div>
-    <div class="col-md-9 blog-posts endless-pagination articles" data-next-page="{{ $articles->nextPageUrl() }}">
-        @foreach ($articles as $article)
+    <div class="col-md-9 blog-posts endless-pagination all_articles" data-next-page="2">
+        @foreach ($all_articles as $article)
         <div class="col-md-12 blog-single-post">
             <div class="col-md-4 blog-post-picture">
                 <img src="{{$article->image}}" alt="" class="blog-picture">
@@ -96,7 +97,7 @@
         </div>
         @endforeach
 
-        {{--{!! $articles->render() !!}--}}
+        {{--{!! $all_articles->render() !!}--}}
 
         <div class="load-more">
             <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-blog">Загрузить еще</p></a>
@@ -109,7 +110,7 @@
             <ul class="cat-list">
                 @foreach($categorys as $category)
                 <li class="cat-list-item">
-                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{count($category->articles)}})</span></a>
+                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{ $category->countAllData }})</span></a>
                 </li>
                 @endforeach
             </ul>

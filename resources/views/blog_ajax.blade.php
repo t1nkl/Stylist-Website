@@ -1,4 +1,4 @@
-@foreach ($articles as $article)
+@foreach ($all_articles as $article)
 <div class="col-md-12 blog-single-post">
    <div class="col-md-4 blog-post-picture">
       <img src="{{$article->image}}" alt="" class="blog-picture">
@@ -12,8 +12,3 @@
    </div>
 </div>
 @endforeach
-
-<div class="load-more">
-   <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-blog">Загрузить еще</p></a>
-</div>
-<div class="load"></div>

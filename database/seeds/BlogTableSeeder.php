@@ -74,7 +74,7 @@ class BlogTableSeeder extends Seeder
 ',
             'image' => 'http://via.placeholder.com/1000x600',
             'status' => 'PUBLISHED',
-            'date' => '2017-07-16',
+            'date' => '2017-07-15',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);
@@ -88,7 +88,7 @@ class BlogTableSeeder extends Seeder
 ',
             'image' => 'http://via.placeholder.com/1000x600',
             'status' => 'PUBLISHED',
-            'date' => '2017-07-16',
+            'date' => '2017-07-14',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);
@@ -102,7 +102,7 @@ class BlogTableSeeder extends Seeder
 ',
             'image' => 'http://via.placeholder.com/1000x600',
             'status' => 'PUBLISHED',
-            'date' => '2017-07-16',
+            'date' => '2017-07-13',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);
@@ -116,7 +116,7 @@ class BlogTableSeeder extends Seeder
 ',
             'image' => 'http://via.placeholder.com/1000x600',
             'status' => 'PUBLISHED',
-            'date' => '2017-07-16',
+            'date' => '2017-07-12',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);
@@ -148,6 +148,77 @@ class BlogTableSeeder extends Seeder
         DB::table('article_tag')->insert([
             'article_id' => '2',
             'tag_id' => '2',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+
+        DB::table('vlogs')->insert([
+            'category_id' => '1',
+            'title' => 'Тест 1',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-16',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '1',
+            'title' => 'Тест 2',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-15',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '2',
+            'title' => 'Тест 3',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-14',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '3',
+            'title' => 'Тест 4',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-13',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '2',
+            'title' => 'Тест 5',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-12',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '3',
+            'title' => 'Тест 6',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-11',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('vlogs')->insert([
+            'category_id' => '1',
+            'title' => 'Тест 7',
+            'description' => '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>',
+            'video' => 'https://www.youtube.com/embed/6CamR_vvny0',
+            'status' => 'PUBLISHED',
+            'date' => '2017-07-10',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);

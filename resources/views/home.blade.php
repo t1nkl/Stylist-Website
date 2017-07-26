@@ -57,24 +57,21 @@
     });
     feed.run();
     function fetchPosts() {
-        $('.load-more').hide();
-        $('.load').addClass('loading');
         var page = $('.endless-pagination').data('next-page');
-        if(page !== null) {
-            $.get(page, function(data){
-                window.Laravel = {!! json_encode([
-                    'csrfToken' => csrf_token(),
-                    ]) !!};
-                $('.portfolios').append(data.portfolios);
+        $.ajax({
+            type: "GET",
+            url: '/',
+            data: {page: page},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){
+                if(data.less_then){$('.load-more').hide();}
                 $('.endless-pagination').data('next-page', data.next_page);
-                $('.load').removeClass('loading');
-            });
-        }
-        else{
-            $('.load-more').hide();
-            $('.load').removeClass('loading');
-        }
-    }
+                $('.all_portfolios').append(data.all_portfolios);
+            }
+        });
+    };
 </script>
 @endsection
 

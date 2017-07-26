@@ -6,10 +6,10 @@
 	@foreach ($abouts as $about)
 	<div class="col-md-3 col-xs-12 about-us-item">
 		<div class="icon">
-			<i class="fa {{$about->icon}}" aria-hidden="true"></i>
+			<i class="fa {{ $about->icon }}" aria-hidden="true"></i>
 		</div>
-		<h2 class="about-hr">{{$about->title}}</h2>
-		<p class="description">{{$about->description}}</p>
+		<h2 class="about-hr">{{ $about->title }}</h2>
+		<p class="description">{{ $about->description }}</p>
 	</div>
 	@endforeach
 </div>

@@ -22,6 +22,8 @@ class Category extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $guarded = ['id'];
+    protected $appends = ['count_all_data'];
+    protected $with = ['articles', 'vlogs'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -66,6 +68,11 @@ class Category extends Model
         return $this->hasMany('App\Models\Article');
     }
 
+    public function vlogs()
+    {
+        return $this->hasMany('App\Models\Vlog');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
@@ -93,6 +100,12 @@ class Category extends Model
         }
 
         return str_slug($this->name);
+    }
+
+    public function getCountAllDataAttribute()
+    {
+        $sum = $this->articles->count() + $this->vlogs->count();
+        return $sum;
     }
 
     /*

@@ -14,10 +14,10 @@
 
 			@foreach($reviewshows as $key => $reviewshow)
 				<div class="carousel-item @if($key == 0) active @endif ">
-					<div class="col-md-4"><img src="{{$reviewshow->image}}" class="slider-image-review" alt=""></div>
+					<div class="col-md-4"><img src="{{ $reviewshow->image }}" class="slider-image-review" alt=""></div>
 					<div class="col-md-8 carousel-caption">
-						<h3>{{$reviewshow->name}}</h3>
-						<p class="review-txt">{{$reviewshow->content}}</p>
+						<h3>{{ $reviewshow->name }}</h3>
+						<p class="review-txt">{{ $reviewshow->content }}</p>
 						<span class="dates">{{ Date::parse($reviewshow->date)->format('j F, Y') }}</span>
 					</div>
 				</div>

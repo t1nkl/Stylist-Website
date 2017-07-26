@@ -7,6 +7,11 @@
 
 
 @section('style_css')
+<style type="text/css">
+    .blog-excerpt > p {
+        text-align: justify
+    }
+</style>
 @endsection
 
 
@@ -50,17 +55,26 @@
         </header>
     </div>
     <div class="col-md-9 blog-posts">
-        @foreach ($articles as $article)
+        @foreach ($all_data as $data)
         <div class="col-md-12 blog-single-post">
+        @if(isset($data->image))
             <div class="col-md-4 blog-post-picture">
-                <img src="{{$article->image}}" alt="" class="blog-picture">
+                <img src="{{$data->image}}" alt="" class="blog-picture">
             </div>
             <div class="col-md-8 blog-post-text">
-                <h2 class="blop-post-heading">{{$article->title}}</h2>
-                <span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ Date::parse($article->date)->format('j F, Y') }}</span>
-                <p class="blog-excerpt">{{$article->description}}</p>
+        @elseif(isset($data->video))
+            <div class="col-md-7 blog-post-picture">
+                <iframe width="100%" height="100%" src="{{$data->video}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-5 blog-post-text">
+        @endif
+                <h2 class="blop-post-heading">{{$data->title}}</h2>
+                <span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ Date::parse($data->date)->format('j F, Y') }}</span>
+                <div class="blog-excerpt">{!!$data->description!!}</div>
+                @if(isset($data->image))
                 <span class="blog-comment">0 Comments</span>
-                <a href="/blog/{{$article->slug}}" class="blog-readmore">Read more</a>
+                    <a href="/blog/{{$data->slug}}" class="blog-readmore">Read more</a>
+                @endif
             </div>
         </div>
         @endforeach
@@ -71,7 +85,7 @@
             <ul class="cat-list">
                 @foreach($categorys as $category)
                 <li class="cat-list-item">
-                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{count($category->articles)}})</span></a>
+                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{ $category->countAllData }})</span></a>
                 </li>
                 @endforeach
             </ul>

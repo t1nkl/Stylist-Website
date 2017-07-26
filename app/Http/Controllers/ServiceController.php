@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
-use Illuminate\Support\Facades\DB;
-
 use App\Models\Service;
 
 class ServiceController extends Controller
@@ -52,6 +48,7 @@ class ServiceController extends Controller
     {
         $service = Service::where('slug', $id)->first();
         $services = Service::all();
+        
         return view('service', compact('service', 'services'));
     }
 

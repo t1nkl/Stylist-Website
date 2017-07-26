@@ -71,7 +71,7 @@
             <ul class="cat-list">
                 @foreach($categorys as $category)
                 <li class="cat-list-item">
-                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{count($category->articles)}})</span></a>
+                    <a href="/category/{{$category->slug}}">{{$category->name}}<span class="cap-posts-counter">({{ $category->countAllData }})</span></a>
                 </li>
                 @endforeach
             </ul>
