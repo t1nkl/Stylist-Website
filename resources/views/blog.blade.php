@@ -76,8 +76,8 @@
 <div class="row">
     <div class="col-md-12 intro-block-illustration">
         <header class="heading">
-            <h2 class="heading-txt">Блог</h2>
-            <p class="description-bl">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации.</p>
+            <h2 class="heading-txt">@lang('messages.blog_page.title')</h2>
+            <p class="description-bl">@lang('messages.blog_page.descr')</p>
         </header>
     </div>
     <div class="col-md-9 blog-posts endless-pagination articles" data-next-page="{{ $articles->nextPageUrl() }}">

@@ -58,8 +58,8 @@
 <div class="row">
     <div id="contacts"  data-offset="150" class="col-md-12 contact-form-block">
         <header class="heading">
-            <h2 class="heading-txt">Связаться с нами</h2>
-            <p class="description-bl">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации.</p>
+            <h2 class="heading-txt">@lang('messages.contact.title')</h2>
+            <p class="description-bl">@lang('messages.contact.descr')</p>
         </header>
         <div class="social-media">
             <a href="@lang('messages.footer.facebook')" class="sm-link-ft"><i class="fa fa-facebook" aria-hidden="true"></i></a>

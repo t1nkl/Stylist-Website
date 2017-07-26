@@ -12,7 +12,7 @@
 				<div class="popup"></div>
 				<div class="description-portfolio">
 					<h3 class="portfolio-heading" itemprop="caption description">{{$portfolio->title}}</h3>
-					<a class="view-more-portfolio">{!!$portfolio->content!!}</a>
+					<a class="view-more-portfolio">{!!$portfolio->description!!}</a>
 				</div>
 			 </div>
 	      </a>

@@ -44,5 +44,165 @@ class ProjectTableSeeder extends Seeder
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
         ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
+        DB::table('projects')->insert([
+            'title' => 'Тестовое название 4',
+            'description' => 'Тестовое описание',
+            'image' => 'http://via.placeholder.com/600x800',
+            'status' => 'PUBLISHED',
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
     }
 }

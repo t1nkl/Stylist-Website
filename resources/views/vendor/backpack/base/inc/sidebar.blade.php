@@ -41,7 +41,7 @@
 
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/lid') }}"><i class="fa fa-comments"></i> <span>Лиды</span></a></li>
 
-      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/review') }}"><i class="fa fa-comment-o"></i> <span>Отзывы</span></a></li>
+      <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/review') }}"><i class="fa fa-comment-o"></i> <span>Отзывы</span></a></li> -->
 
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/contact') }}"><i class="fa fa-phone"></i> <span>Контакты</span></a></li>
 

@@ -28,6 +28,11 @@ class About extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function getPublishedAbout()
+    {
+        return self::published()->take(3)->get();
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

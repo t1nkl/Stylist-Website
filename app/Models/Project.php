@@ -37,6 +37,11 @@ class Project extends Model
         return $result;
     }
 
+    public static function getPaginatePortfolio()
+    {
+        return self::published()->paginate(8);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
