@@ -80,7 +80,7 @@
 
 <div class="row">
 
-    @include('main_parts.aboutus')
+    @include('main_parts.about')
 
     @include('main_parts.service')
 

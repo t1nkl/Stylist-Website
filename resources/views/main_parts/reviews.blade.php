@@ -3,27 +3,31 @@
 		<h2 class="heading-txt">@lang('messages.reviews.title')</h2>
 		<p class="description-bl">@lang('messages.reviews.descr')</p>
 	</header>
-	<div class="offset-md-3 col-md-6 reviews-slider">
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
+	<div class="col-md-10">
+		<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> -->
+			<!-- <ol class="carousel-indicators">
 				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
+			</ol> -->
+			<!-- <div class="carousel-inner" role="listbox">carousel-item slider-image-review carousel-caption-->
+			<div class="slider">
 
 			@foreach($reviewshows as $key => $reviewshow)
-				<div class="carousel-item @if($key == 0) active @endif ">
-					<div class="col-md-4"><img src="{{ $reviewshow->image }}" class="slider-image-review" alt=""></div>
-					<div class="col-md-8 carousel-caption">
+			<div class="slide">
+				<div class=" @if($key == 0) active @endif ">
+					<div class="col-md-4"><img src="{{ $reviewshow->image }}" class="" alt=""></div>
+					<div class="col-md-8 ">
 						<h3>{{ $reviewshow->name }}</h3>
 						<p class="review-txt">{{ $reviewshow->content }}</p>
 						<span class="dates">{{ Date::parse($reviewshow->date)->format('j F, Y') }}</span>
 					</div>
 				</div>
-			@endforeach
-				
 			</div>
+			@endforeach
+			
+			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 </div>

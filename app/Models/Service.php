@@ -51,6 +51,11 @@ class Service extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function mainservice()
+    {
+        return $this->belongsTo('App\Models\Mainservice', 'mainservice_id');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

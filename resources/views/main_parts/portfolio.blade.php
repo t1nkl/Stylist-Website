@@ -3,29 +3,32 @@
 		<h2 class="heading-txt">@lang('messages.portfolio.title')</h2>
 		<p class="description-bl">@lang('messages.portfolio.descr')</p>
 	</header>
-	<div class="my-gallery endless-pagination all_portfolios" data-next-page="2">
-		@foreach($all_portfolios as $portfolio)
-		<figure class="col-md-3 portfolio-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-	      <a href="/{{ $portfolio->image }}" itemprop="contentUrl" data-size="600x800">
-	        <img src="{{ $portfolio->image }}" itemprop="thumbnail" alt="Image description" />
-			<div class="portfolio-caption-2">
-				<div class="popup"></div>
-				<div class="description-portfolio">
-					<h3 class="portfolio-heading" itemprop="caption description">{{ $portfolio->title }}</h3>
-					<a class="view-more-portfolio">{!! $portfolio->description !!}</a>
-				</div>
-			 </div>
-	      </a>
-	    </figure>
-		@endforeach
+    <div class="postsWrap">
+    	<div class="my-gallery endless-pagination all_portfolios" data-next-page="2">
+    		@foreach($all_portfolios as $portfolio)
+    		<figure class="col-md-3 portfolio-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    	      <a href="/{{ $portfolio->image }}" itemprop="contentUrl" data-size="600x800">
+    	        <img src="{{ $portfolio->image }}" itemprop="thumbnail" alt="Image description" />
+    			<div class="portfolio-caption-2">
+    				<div class="popup"></div>
+    				<div class="description-portfolio">
+    					<h3 class="portfolio-heading" itemprop="caption description">{{ $portfolio->title }}</h3>
+    					<a class="view-more-portfolio">{!! $portfolio->description !!}</a>
+    				</div>
+    			 </div>
+    	      </a>
+    	    </figure>
+    		@endforeach
 
-        {{--{!! $all_portfolios->render() !!}--}}
+            {{--{!! $all_portfolios->render() !!}--}}
 
-        <div class="load-more col-md-2">
-            <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-portfolio">Загрузить еще</p></a>
-        </div>
-        <div class="load"></div>
-	</div>
+            
+    	</div>
+            <div class="load-more col-md-3">
+                <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-portfolio">Загрузить еще</p></a>
+            </div>
+            <div class="load"></div>
+    </div> <!-- postWrap -->
 </div>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="pswp__bg"></div>

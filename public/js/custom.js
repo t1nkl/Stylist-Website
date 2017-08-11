@@ -18,3 +18,12 @@ $('.header-menu li a').on('click', function(){
     $(".main-navigation").removeClass("show");
     $(".navbar-toggler ").addClass("collapsed");
 });
+
+$(document).ready(function(){
+  $('.slider').bxSlider({
+    /*slideWidth: 300,*/
+    minSlides: 2,
+    /*maxSlides: 2,*/
+    slideMargin: 10
+  });
+});

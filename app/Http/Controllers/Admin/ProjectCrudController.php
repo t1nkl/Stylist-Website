@@ -34,39 +34,39 @@ class ProjectCrudController extends CrudController
         // ------ CRUD COLUMNS
         
         $this->crud->addColumn([
-                                'name' => 'title',
-                                'label' => 'Название',
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            ]);
         $this->crud->addColumn([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                            ]);
+            'name' => 'status',
+            'label' => 'Статус',
+            ]);
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-                                'name' => 'title',
-                                'label' => 'Название',
-                                'type' => 'text',
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            'type' => 'text',
+            ]);
         $this->crud->addField([
-                                'name' => 'description',
-                                'label' => 'Текст',
-                                'type' => 'textarea',
-                                'attributes' => ['rows' => 4],
-                            ]);
+            'name' => 'description',
+            'label' => 'Текст',
+            'type' => 'textarea',
+            'attributes' => ['rows' => 4],
+            ]);
         $this->crud->addField([
-                                'name' => 'image',
-                                'label' => 'Картинка',
-                                'type' => 'image',
-                                'upload' => true,
-                                'crop' => true,
-                                'aspect_ratio' => 0.75,
-                            ]);
+            'name' => 'image',
+            'label' => 'Картинка',
+            'type' => 'image',
+            'upload' => true,
+            'crop' => true,
+            'aspect_ratio' => 0.75,
+            ]);
         $this->crud->addField([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                                'type' => 'enum',
-                            ]);
+            'name' => 'status',
+            'label' => 'Статус',
+            'type' => 'enum',
+            ]);
 
         $this->crud->enableAjaxTable();
 

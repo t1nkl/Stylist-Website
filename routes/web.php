@@ -14,7 +14,8 @@
 Route::get('/', 'HomeController@index');
 Route::resource('blog', 'BlogController');
 Route::resource('vlog', 'VlogController');
-Route::resource('service', 'ServiceController');
+Route::get('service/{mainservice}', 'ServiceController@index');
+Route::get('service/{mainservice}/{service}', 'ServiceController@show');
 Route::resource('lid', 'LidController');
 Route::resource('contact', 'ContactController');
 Route::get('category/{name}', 'CategoryController@show');

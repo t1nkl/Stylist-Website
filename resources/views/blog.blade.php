@@ -74,7 +74,7 @@
 
 @section('content')
 
-<div class="row">
+<div class="row mainColumnBlog">
     <div class="col-md-12 intro-block-illustration">
         <header class="heading">
             <h2 class="heading-txt">@lang('messages.blog_page.title')</h2>

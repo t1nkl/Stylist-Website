@@ -24,7 +24,6 @@
 @section('style_javascript')
 <script type="text/javascript">
     function fetchPosts() {
-        event.preventDefault();
         var page = $('.endless-pagination').data('next-page');
         $.ajax({
             type: "GET",
@@ -78,32 +77,36 @@
             <p class="description-bl">@lang('messages.vlog_page.descr')</p>
         </header>
     </div>
-    <div class="col-md-9 vlog-posts endless-pagination all_vlogs" data-next-page="2">
-    @foreach($all_vlogs as $vlog)
-        <div class="col-md-12 vlog-single-post">
-            <iframe width="100%" height="500px" src="{{ $vlog->video }}" frameborder="0" allowfullscreen></iframe>
-            <div class="col-md-12 vlog-post-text">
-                <h2 class="vlog-post-heading">{{ $vlog->title }}</h2>
-                <span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ Date::parse($vlog->date)->format('j F, Y') }}</span>
-                <p class="vlog-content">{!! $vlog->description !!}</p>
-                <!-- <span class="vlog-comment">0 Comments</span> -->
-                <!-- <div class="social-media-vl"> -->
-                    <!-- <a href="#" class="sm-link-ft"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" class="sm-link-ft"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" class="sm-link-ft"><i class="fa fa-vk" aria-hidden="true"></i></a>
-                    <a href="#" class="sm-link-ft"><i class="fa fa-youtube" aria-hidden="true"></i></a> -->
-                <!-- </div>   -->
+    <div class="postsWrap col-md-9">
+        <div class="vlog-posts endless-pagination all_vlogs" data-next-page="2">
+        @foreach($all_vlogs as $vlog)
+            <div class="col-md-12 vlog-single-post">
+                <iframe width="100%" height="500px" src="{{ $vlog->video }}" frameborder="0" allowfullscreen></iframe>
+                <div class="col-md-12 vlog-post-text">
+                    <h2 class="vlog-post-heading">{{ $vlog->title }}</h2>
+                    <span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ Date::parse($vlog->date)->format('j F, Y') }}</span>
+                    <p class="vlog-content">{!! $vlog->description !!}</p>
+                    <!-- <span class="vlog-comment">0 Comments</span> -->
+                    <!-- <div class="social-media-vl"> -->
+                        <!-- <a href="#" class="sm-link-ft"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="sm-link-ft"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="sm-link-ft"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                        <a href="#" class="sm-link-ft"><i class="fa fa-youtube" aria-hidden="true"></i></a> -->
+                </div>
             </div>
+        @endforeach
         </div>
-    @endforeach
 
         {{--{!! $all_vlogs->render() !!}--}}
-
         <div class="load-more">
-            <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-blog">Загрузить еще</p></a>
+            <a onclick="fetchPosts()" class="load-more-link">
+                <p class="load-more-blog">Загрузить еще</p>
+            </a>
         </div>
-        <div class="load"></div>
+        <div class="load"></div>   
     </div>
+        
+
     <div class="col-md-3 blog-sidebar">
         <div class="categories">
             <h4 class="cat-heading">Категории</h4>

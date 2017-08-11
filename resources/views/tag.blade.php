@@ -43,7 +43,7 @@
 
 @section('content')
 
-<div class="row">
+<div class="row mainColumnTeg">
     <div class="col-md-12 intro-block-illustration">
         <header class="heading">
             <h2 class="heading-txt">Тег: {{$tag->name}}</h2>

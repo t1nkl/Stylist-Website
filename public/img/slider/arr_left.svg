@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="82px"
+   height="66px"
+   viewBox="0 0 82 66"
+   version="1.1"
+   id="svg13"
+   sodipodi:docname="arr_left.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1304"
+     inkscape:window-height="745"
+     id="namedview15"
+     showgrid="false"
+     inkscape:zoom="3.5757576"
+     inkscape:cx="41"
+     inkscape:cy="33"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">Group</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     id="news"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(-1,0,0,1,82,0)">
+    <g
+       id="article"
+       transform="translate(-1013,-1888)">
+      <g
+         id="Group"
+         transform="translate(1013,1888)">
+        <rect
+           id="Rectangle-14"
+           x="0"
+           y="0"
+           width="82"
+           height="66"
+           style="opacity:0.8;fill:#1a1a1a" />
+        <polygon
+           id="Shape"
+           points="30,19.2 34.162162,15 52,33 34.162162,51 30,46.5 43.675676,33 "
+           style="fill:#939393" />
+      </g>
+    </g>
+  </g>
+</svg>

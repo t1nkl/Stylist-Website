@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Backpack\CRUD\CrudTrait;
+use App\Traits\CustomCrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Image;
 
 class Project extends Model
 {
-    use CrudTrait;
+    use CustomCrudTrait;
     use SluggableScopeHelpers;
 
     /*
@@ -99,12 +100,15 @@ class Project extends Model
         // if a base64 was sent, store it in the db
         if (starts_with($value, 'data:image'))
         {
+            // Image::configure(array('driver' => 'imagick'));
+
             // 0. Make the image
-            $image = \Image::make($value)->resize(NULL, $image_height, function ($constraint) {
+            $image = Image::make($value)->resize(NULL, $image_height, function ($constraint) {
                 $constraint->aspectRatio();
-            });
+            })->encode('jpg');
+            
             // 1. Generate a filename.
-            $filename = md5($value.time()).'.png';
+            $filename = md5($value.time()).'.jpg';
 
             // 2. Store the image on disk.
             \Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());

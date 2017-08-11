@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Jenssegers\Date\Date;
-use App\Models\{Article, Category, Tag, Service, Vlog};
+use App\Models\{Article, Category, Tag, Vlog};
 
 class CategoryController extends Controller
 {
@@ -49,9 +49,8 @@ class CategoryController extends Controller
         $category = Category::where('slug', $id)->first();
         $all_data = $category->articles->merge($category->vlogs)->sortByDesc('date')->all();
         $categorys = Category::orderBy('created_at', "asc")->get();
-        $services = Service::all();
         
-        return view('category', compact('all_data', 'category', 'categorys', 'services'));
+        return view('category', compact('all_data', 'category', 'categorys'));
     }
 
     /**

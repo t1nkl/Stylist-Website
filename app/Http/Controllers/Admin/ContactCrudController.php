@@ -32,28 +32,27 @@ class ContactCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-                                'name' => 'name',
-                                'label' => 'Name',
-                                'type' => 'text',
-                            ]);
+            'name' => 'name',
+            'label' => 'Name',
+            'type' => 'text',
+            ]);
         $this->crud->addField([
-                                'name' => 'email',
-                                'label' => 'Email',
-                                'type' => 'text',
-                            ]);
+            'name' => 'email',
+            'label' => 'Email',
+            'type' => 'text',
+            ]);
         $this->crud->addField([
-                                'name' => 'phone',
-                                'label' => 'Phone',
-                                'type' => 'text',
-                            ]);
+            'name' => 'phone',
+            'label' => 'Phone',
+            'type' => 'text',
+            ]);
         $this->crud->addField([
-                                'name' => 'content',
-                                'label' => 'Content',
-                                'type' => 'text',
-                            ]);
+            'name' => 'content',
+            'label' => 'Content',
+            'type' => 'text',
+            ]);
 
         $this->crud->denyAccess(['create', 'update']);
-
         $this->crud->enableAjaxTable();
     }
 

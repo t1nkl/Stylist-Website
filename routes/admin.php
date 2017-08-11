@@ -11,14 +11,18 @@
 |
 */
 
+if (config('backpack.base.setup_dashboard_routes')) {
+    Route::get('dashboard', 'CustomAdminController@dashboard');
+}
+
 CRUD::resource('article', 'ArticleCrudController');
 CRUD::resource('category', 'CategoryCrudController');
 CRUD::resource('tag', 'TagCrudController');
 CRUD::resource('vlog', 'VlogCrudController');
 CRUD::resource('service', 'ServiceCrudController');
+CRUD::resource('main/service', 'MainserviceCrudController');
 CRUD::resource('about', 'AboutCrudController');
 CRUD::resource('project', 'ProjectCrudController');
-CRUD::resource('review', 'ReviewCrudController');
-CRUD::resource('reviewshow', 'ReviewShowCrudController');
+CRUD::resource('reviews', 'ReviewCrudController');
 CRUD::resource('contact', 'ContactCrudController');
 CRUD::resource('lid', 'LidCrudController');

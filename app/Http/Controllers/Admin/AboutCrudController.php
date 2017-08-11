@@ -33,49 +33,48 @@ class AboutCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-                                'name' => 'title',
-                                'label' => 'Название',
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            ]);
         $this->crud->addColumn([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                            ]);
+            'name' => 'status',
+            'label' => 'Статус',
+            ]);
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-                                'name' => 'title',
-                                'label' => 'Название',
-                                'type' => 'text',
-                                'attributes' => ['maxlength' => 50],
-                                'count_down' => 50,
-                                'attributes' => ['maxlength' => 50],
-                                'wrapperAttributes' => [
-                                    'class' => 'form-group col-md-9',
-                                ],
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            'type' => 'text',
+            'count_down' => 70,
+            'attributes' => ['maxlength' => 50],
+            'wrapperAttributes' => [
+            'class' => 'form-group col-md-9',
+            ],
+            ]);
         $this->crud->addField([
-                                'name' => 'icon',
-                                'label' => 'Иконка',
-                                'type' => 'icon_picker',
-                                'iconset' => 'fontawesome',
-                                'wrapperAttributes' => [
-                                    'class' => 'form-group col-md-1',
-                                ],
-                            ]);
+            'name' => 'icon',
+            'label' => 'Иконка',
+            'type' => 'icon_picker',
+            'iconset' => 'fontawesome',
+            'wrapperAttributes' => [
+            'class' => 'form-group col-md-1',
+            ],
+            ]);
         $this->crud->addField([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                                'type' => 'enum',
-                                'wrapperAttributes' => [
-                                    'class' => 'form-group col-md-2',
-                                ],
-                            ]);
+            'name' => 'status',
+            'label' => 'Статус',
+            'type' => 'enum',
+            'wrapperAttributes' => [
+            'class' => 'form-group col-md-2',
+            ],
+            ]);
         $this->crud->addField([
-                                'name' => 'description',
-                                'label' => 'Текст',
-                                'type' => 'textarea',
-                                'attributes' => ['rows' => 4],
-                            ]);
+            'name' => 'description',
+            'label' => 'Текст',
+            'type' => 'textarea',
+            'attributes' => ['rows' => 4],
+            ]);
 
         $this->crud->enableAjaxTable();
 

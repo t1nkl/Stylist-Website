@@ -25,7 +25,7 @@ class AboutRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:2|max:50',
+            'title' => 'required|min:2|max:70',
             'description' => 'required|min:10',
             'icon' => 'required',
         ];

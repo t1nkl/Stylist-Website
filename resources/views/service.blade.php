@@ -12,6 +12,14 @@
         padding-right: 1px;
         padding-left: 1px;
     }
+    .blog-content p img{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .blog-content p {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 </style>
 @endsection
 

@@ -29,25 +29,25 @@ class TagCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-                                'name' => 'name',
-                                'label' => 'Название',
-                            ]);
+            'name' => 'name',
+            'label' => 'Название',
+            ]);
         $this->crud->addColumn([
-                                'name' => 'slug',
-                                'label' => 'Slug',
-                            ]);
+            'name' => 'slug',
+            'label' => 'Slug',
+            ]);
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-                                'name' => 'name',
-                                'label' => 'Название',
-                            ]);
+            'name' => 'name',
+            'label' => 'Название',
+            ]);
         $this->crud->addField([
-                                'name' => 'slug',
-                                'label' => 'Slug (URL)',
-                                'type' => 'text',
-                                'attributes' => ['readonly' => 'readonly'],
-                            ], 'update');
+            'name' => 'slug',
+            'label' => 'Slug (URL)',
+            'type' => 'text',
+            'attributes' => ['readonly' => 'readonly'],
+            ], 'update');
     }
 
     public function store(StoreRequest $request)

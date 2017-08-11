@@ -21,10 +21,9 @@
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @foreach($services as $service)
+                            @foreach(Helpers::getMainservices() as $service)
                                 <a class="dropdown-item" href="{{ url('/service/'.$service->slug) }}">{{$service->title}}</a>
                             @endforeach
-                            <!-- <a class="dropdown-item" href="/service">Услуга 2</a> -->
                         </div>
                     </li>
                     <li class="nav-item">
@@ -77,10 +76,9 @@
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @foreach($services as $service)
+                            @foreach(Helpers::getMainservices() as $service)
                                 <a class="dropdown-item" href="{{ url('/service/'.$service->slug) }}">{{$service->title}}</a>
                             @endforeach
-                            <!-- <a class="dropdown-item" href="/service">Услуга 2</a> -->
                         </div>
                     </li>
                     <li class="nav-item">

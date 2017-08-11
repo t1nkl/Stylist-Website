@@ -9,7 +9,7 @@ use App\Http\Requests\LidRequest as UpdateRequest;
 class LidCrudController extends CrudController {
 
     public function __construct() {
-        
+
         parent::__construct();
 
         /*
@@ -29,16 +29,15 @@ class LidCrudController extends CrudController {
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-                                'name' => 'email',
-                                'label' => 'Email',
-                            ]);
+            'name' => 'email',
+            'label' => 'Email',
+            ]);
         $this->crud->addColumn([
-                                'name' => 'created_at',
-                                'label' => 'Время',
-                            ]);
+            'name' => 'created_at',
+            'label' => 'Время',
+            ]);
 
         $this->crud->denyAccess(['create', 'update']);
-
         $this->crud->enableAjaxTable();
 
     }

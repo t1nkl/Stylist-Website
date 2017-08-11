@@ -23,11 +23,17 @@
 
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/about') }}"><i class="fa fa-user-circle-o"></i> <span>О нас</span></a></li>
 
-      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/service') }}"><i class="fa fa-shopping-bag"></i> <span>Услуги</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-newspaper-o"></i> <span>Услуги</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/main/service') }}"><i class="fa fa-newspaper-o"></i> <span>Главные услуги</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/service') }}"><i class="fa fa-files-o"></i> <span>Услуги</span></a></li>
+        </ul>
+      </li>
 
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/project') }}"><i class="fa fa-file-image-o"></i> <span>Портфолио</span></a></li>
 
-      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/reviewshow') }}"><i class="fa fa-files-o"></i> <span>Отзывы на сайте</span></a></li>
+      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/reviews') }}"><i class="fa fa-files-o"></i> <span>Отзывы</span></a></li>
 
       <li class="treeview">
         <a href="#"><i class="fa fa-newspaper-o"></i> <span>Записи, категории, теги</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -63,7 +69,6 @@
           </li>
         </ul>
       </li>
-
 
       <!-- ======================================= -->
       <li class="header">{{ trans('backpack::base.user') }}</li>

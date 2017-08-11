@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Jenssegers\Date\Date;
-use App\Models\{Article, Category, Tag, Service};
+use App\Models\{Article, Category, Tag};
 
 class TagController extends Controller
 {
@@ -50,9 +50,8 @@ class TagController extends Controller
         $articles = $tag->articles;
         $tags = Tag::orderBy('created_at', "asc")->get();
         $categorys = Category::orderBy('created_at', "asc")->get();
-        $services = Service::all();
 
-        return view('tag', compact('articles', 'tag', 'categorys', 'services'));
+        return view('tag', compact('articles', 'tag', 'categorys'));
     }
 
     /**

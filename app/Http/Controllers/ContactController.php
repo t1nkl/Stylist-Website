@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Mail;
 use Illuminate\Http\Request;
-use App\Models\{Contact, Service};
+use App\Models\{Contact};
 
 class ContactController extends Controller
 {
@@ -15,8 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-        return view('contact', compact('services'));
+        return view('contact');
     }
 
     /**

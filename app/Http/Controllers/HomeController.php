@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Identify;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
 use Illuminate\Http\Request;
-use App\Models\{About, Project, Service, ReviewShow, Article};
+use App\Models\{About, Project, Mainservice, Review, Article, VisitorId, VisitorIp};
 
 class HomeController extends Controller
 {
@@ -27,8 +28,14 @@ class HomeController extends Controller
     public function index( Request $request ) 
     {   
         Date::setLocale('ru');
+        if(Identify::browser()->getName() && Identify::os()->getName()) {
+            VisitorId::addVisitorId(session()->getId(), Identify::browser()->getName(), Identify::os()->getName());
+        } else {
+            VisitorId::addVisitorId(session()->getId(), null);
+        }
+        VisitorIp::addVisitorIp($request->ip());
         $abouts = About::getPublishedAbout();
-        $services = Service::orderBy('rgt')->get();
+        $services = Mainservice::orderBy('rgt')->get();
         $all_portfolios = Project::getPaginatePortfolio()->forPage($page = request()->has('page') ? request()->page : 1, 8)->all();
         if($request->ajax()) {
             return [
@@ -37,7 +44,7 @@ class HomeController extends Controller
                 'less_then' => count($all_portfolios) < 8
             ];
         }
-        $reviewshows = ReviewShow::all();
+        $reviewshows = Review::all();
         $blogs = Article::getLastBlog(3);
         
         return view('home', compact('abouts', 'all_portfolios', 'services', 'reviewshows', 'blogs'));

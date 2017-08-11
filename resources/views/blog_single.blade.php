@@ -36,7 +36,7 @@
 
 <div class="row">
 	<div class="col-md-9 blog-single">
-		<img src="{{$article->image}}" alt="" class="blog-single-illustration">
+		<!-- <img src="{{$article->image}}" alt="" class="blog-single-illustration"> -->
 		<h2 class="blop-single-heading">{{$article->title}}</h2>
 		<span class="dates"><i class="fa fa-clock-o" aria-hidden="true"></i> {{$article->date->format('d.m.Y')}}</span>
 		<p class="blog-content">{!!$article->content!!}</p>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Vlog, Service, Category};
+use App\Models\{Vlog, Category};
 
 class VlogController extends Controller
 {
@@ -33,9 +33,8 @@ class VlogController extends Controller
             ];
         }
         $categorys = Category::orderBy('created_at', "asc")->get();
-        $services = Service::all();
         
-        return view('vlog', compact('services', 'all_vlogs', 'categorys'));
+        return view('vlog', compact('all_vlogs', 'categorys'));
     }
 
 }

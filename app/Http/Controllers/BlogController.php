@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
 use Illuminate\Http\Request;
-use App\Models\{Article, Category, Tag, Service};
+use App\Models\{Article, Category, Tag};
 
 class BlogController extends Controller
 {
@@ -16,10 +16,6 @@ class BlogController extends Controller
      */
     public function index(Request $request)
     {
-        // old version of code
-        // $articles = Article::where('status', 'PUBLISHED')->get();
-        // $page = request()->has('page') ? request()->page : 1;
-        // $all_articles = $articles->sortByDesc('date')->forPage($page, 3)->all();
         $all_articles = Article::where('status', 'PUBLISHED')->orderBy('date', "desc")->get()->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
         if($request->ajax()) {
             return [
@@ -29,9 +25,8 @@ class BlogController extends Controller
             ];
         }
         $categorys = Category::orderBy('created_at', "asc")->get();
-        $services = Service::all();
 
-        return view('blog', compact('all_articles', 'categorys', 'services'));
+        return view('blog', compact('all_articles', 'categorys'));
     }
 
     /**

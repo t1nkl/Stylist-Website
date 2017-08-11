@@ -33,43 +33,62 @@ class ServiceCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-                                'name' => 'title',
-                                'label' => 'Название',
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            ]);
         $this->crud->addColumn([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                            ]);
+            'name' => 'status',
+            'label' => 'Статус',
+            ]);
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-                                'name' => 'title',
-                                'label' => 'Название',
-                                'type' => 'text',
-                            ]);
+            'name' => 'title',
+            'label' => 'Название',
+            'type' => 'text',
+            ]);
         $this->crud->addField([
-                                'name' => 'slug',
-                                'label' => 'Slug (URL)',
-                                'type' => 'text',
-                                'attributes' => ['readonly' => 'readonly'],
-                            ], 'update');
+            'name' => 'slug',
+            'label' => 'Slug (URL)',
+            'type' => 'text',
+            'attributes' => ['readonly' => 'readonly'],
+            ], 'update');
         $this->crud->addField([
-                                'name' => 'description',
-                                'label' => 'Описание',
-                                'type' => 'textarea',
-                                'attributes' => ['rows' => 4],
-                            ]);
+            'name' => 'description',
+            'label' => 'Описание',
+            'type' => 'textarea',
+            'attributes' => ['rows' => 4],
+            ]);
         $this->crud->addField([
-                                'name' => 'content',
-                                'label' => 'Текст',
-                                'type' => 'ckeditor',
-                                'extra_plugins' => ['oembed', 'widget', 'justify', 'preview'],
-                            ]);
+            'name' => 'content',
+            'label' => 'Текст',
+            'type' => 'ckeditor',
+            'extra_plugins' => ['oembed', 'widget', 'justify', 'preview', 'lineutils'],
+            ]);
         $this->crud->addField([
-                                'name' => 'status',
-                                'label' => 'Статус',
-                                'type' => 'enum',
-                            ]);
+            'name' => 'image',
+            'label' => 'Изображение',
+            'type' => 'upload',
+            ]);
+        $this->crud->addField([
+            'label' => 'Категория',
+            'type' => 'select2',
+            'name' => 'mainservice_id',
+            'entity' => 'mainservice',
+            'attribute' => 'title',
+            'model' => "App\Models\Mainservice",
+            'wrapperAttributes' => [
+            'class' => 'form-group col-md-6',
+            ],
+            ]);
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Статус',
+            'type' => 'enum',
+            'wrapperAttributes' => [
+            'class' => 'form-group col-md-6',
+            ],
+            ]);
 
         $this->crud->enableAjaxTable();
 
