@@ -26,7 +26,7 @@ class MainserviceRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     {
         return [
             'title' => 'required|min:2|max:191',
-            'slug' => 'unique:services,slug,'.\Request::get('id'),
+            'slug' => 'unique:mainservices,slug,'.\Request::get('id'),
             'description' => 'required|min:2',
             'content' => 'required|min:2',
         ];

@@ -46,7 +46,11 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        $tag = Tag::where('slug', $id)->first();
+        $tag = Tag::findBySlug($id);
+        if (!$tag)
+        {
+            abort(404);
+        }
         $articles = $tag->articles;
         $tags = Tag::orderBy('created_at', "asc")->get();
         $categorys = Category::orderBy('created_at', "asc")->get();

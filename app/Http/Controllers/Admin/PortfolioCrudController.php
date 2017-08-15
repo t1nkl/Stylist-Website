@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use App\Http\Requests\ProjectRequest as StoreRequest;
-use App\Http\Requests\ProjectRequest as UpdateRequest;
+use App\Http\Requests\PortfolioRequest as StoreRequest;
+use App\Http\Requests\PortfolioRequest as UpdateRequest;
 
-class ProjectCrudController extends CrudController
+class PortfolioCrudController extends CrudController
 {
     public function __construct()
     {
@@ -17,8 +17,8 @@ class ProjectCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel("App\Models\Project");
-        $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/project');
+        $this->crud->setModel("App\Models\Portfolio");
+        $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/portfolio');
         $this->crud->setEntityNameStrings('портфолио', 'портфолио');
 
         /*

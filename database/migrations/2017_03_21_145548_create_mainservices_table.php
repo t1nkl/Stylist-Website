@@ -25,8 +25,11 @@ class CreateMainservicesTable extends Migration
             $table->longText('content')->nullable();
             $table->string('image')->default('');
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
+
+            $table->text('seo_title')->nullable();
+            $table->text('seo_description')->nullable();
+
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

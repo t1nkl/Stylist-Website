@@ -31,6 +31,12 @@ class Vlog extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function getAllVlogs()
+    {
+        $result = self::where('status', 'PUBLISHED')->orderBy('date', "desc")->get();
+        return $result;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -41,12 +47,6 @@ class Vlog extends Model
     {
         return $this->belongsTo('App\Models\Category', 'category_id');
     }
-
-    public function tags()
-    {
-        return $this->belongsToMany('App\Models\Tag', 'vlog_tag');
-    }
-
 
     /*
     |--------------------------------------------------------------------------

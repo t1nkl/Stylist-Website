@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use Image;
 use App\Traits\CustomCrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
-use Image;
 
-class Project extends Model
+class Portfolio extends Model
 {
     use CustomCrudTrait;
     use SluggableScopeHelpers;
@@ -19,7 +19,7 @@ class Project extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'projects';
+    protected $table = 'portfolios';
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $guarded = ['id'];
@@ -34,7 +34,7 @@ class Project extends Model
 
     public static function getLastPortfolio($number)
     {
-        $result = Project::where('status', 'PUBLISHED')->orderBy('created_at', "desc")->limit($number)->get();
+        $result = Portfolio::where('status', 'PUBLISHED')->orderBy('created_at', "desc")->limit($number)->get();
         return $result;
     }
 
@@ -86,7 +86,7 @@ class Project extends Model
     {
         $attribute_name = "image";
         $disk = "uploads";
-        $destination_path = "Projects/".$this->getSlugOrTitleAttribute();
+        $destination_path = "Portfolio_Gallery/".$this->getSlugOrTitleAttribute();
         $image_height = 600;
 
         if ($value==null) {

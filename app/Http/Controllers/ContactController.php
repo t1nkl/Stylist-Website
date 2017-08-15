@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Mail;
 use Illuminate\Http\Request;
-use App\Models\{Contact};
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        // return view('contact');
     }
 
     /**
@@ -36,23 +36,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact;
-        $contact->name = $request->input('name');
-        $contact->phone = $request->input('phone');
-        $contact->email = $request->input('email');
-        $contact->content = $request->input('content');
-
-        if ($contact->save()){
+        if ($contact = Contact::create($request->all())){
             try {
-                // Mail::send('emails.email', ['name' => $contact->name, 'phone' => $contact->phone, 'url' => $contact->url, 'email' => $contact->email, 'content' => $contact->content, 'date' => date('Y-m-d H:i:s')], function ($message) {
-                //     $message->from('order@leodigital.com.ua', 'LeoDigital');
-                //     $message->to('order@leodigital.com.ua', 'LeoDigital')->subject('New message!');
-                // });
+                // \Mail::to($settings->subemail)->send(new \App\Mail\ContactForm($contact));
                 return response()->json(200);
             } catch (\Exception $e) {
-                return response()->json(['error' => true, 'msg' => $valid_url], 400);
+                return response()->json(['error' => true, 'msg' => $e->getMessage()], 400);
             }
-        }      
+        }    
     }
 
     /**

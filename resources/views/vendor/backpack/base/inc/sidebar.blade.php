@@ -31,7 +31,7 @@
         </ul>
       </li>
 
-      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/project') }}"><i class="fa fa-file-image-o"></i> <span>Портфолио</span></a></li>
+      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/portfolio') }}"><i class="fa fa-file-image-o"></i> <span>Портфолио</span></a></li>
 
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/reviews') }}"><i class="fa fa-files-o"></i> <span>Отзывы</span></a></li>
 

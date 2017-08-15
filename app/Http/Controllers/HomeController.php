@@ -6,7 +6,7 @@ use Identify;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
 use Illuminate\Http\Request;
-use App\Models\{About, Project, Mainservice, Review, Article, VisitorId, VisitorIp};
+use App\Models\{About, Portfolio, Mainservice, Review, Article, VisitorId, VisitorIp};
 
 class HomeController extends Controller
 {
@@ -36,7 +36,7 @@ class HomeController extends Controller
         VisitorIp::addVisitorIp($request->ip());
         $abouts = About::getPublishedAbout();
         $services = Mainservice::orderBy('rgt')->get();
-        $all_portfolios = Project::getPaginatePortfolio()->forPage($page = request()->has('page') ? request()->page : 1, 8)->all();
+        $all_portfolios = Portfolio::getPaginatePortfolio()->forPage($page = request()->has('page') ? request()->page : 1, 8)->all();
         if($request->ajax()) {
             return [
                 'all_portfolios' => view('home_portfolios_ajax')->with(compact('all_portfolios'))->render(),

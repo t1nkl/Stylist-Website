@@ -13,12 +13,15 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index($mainservice)
     {
-        $service = Mainservice::where('slug', $id)->first();
-        $services = Mainservice::all();
+        $service = Mainservice::findBySlug($mainservice);
+        if (!$service)
+        {
+            abort(404);
+        }
         
-        return view('service', compact('service', 'services'));
+        return view('mainservice', compact('service'));
     }
 
     /**
@@ -27,12 +30,16 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($mainservice, $service)
     {
-        $service = Service::where('slug', $id)->first();
-        $services = Service::all();
+        $service = Service::findBySlug($service);
+        $mainservice = Mainservice::findBySlug($mainservice);
+        if (!$mainservice || !$service)
+        {
+            abort(404);
+        }
         
-        return view('service', compact('service', 'services'));
+        return view('service', compact('mainservice', 'service'));
     }
 
 }

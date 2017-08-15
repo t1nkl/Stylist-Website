@@ -22,7 +22,7 @@ CRUD::resource('vlog', 'VlogCrudController');
 CRUD::resource('service', 'ServiceCrudController');
 CRUD::resource('main/service', 'MainserviceCrudController');
 CRUD::resource('about', 'AboutCrudController');
-CRUD::resource('project', 'ProjectCrudController');
+CRUD::resource('portfolio', 'PortfolioCrudController');
 CRUD::resource('reviews', 'ReviewCrudController');
 CRUD::resource('contact', 'ContactCrudController');
 CRUD::resource('lid', 'LidCrudController');

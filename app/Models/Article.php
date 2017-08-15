@@ -50,7 +50,11 @@ class Article extends Model
 
     public static function getLastBlog($number)
     {
-        $result = Article::where('status', 'PUBLISHED')->orderBy('date', "desc")->limit($number)->get();
+        if($number == 0){
+            $result = self::where('status', 'PUBLISHED')->orderBy('date', "desc")->get();
+        } else {
+            $result = self::where('status', 'PUBLISHED')->orderBy('date', "desc")->limit($number)->get();
+        }
         return $result;
     }
 

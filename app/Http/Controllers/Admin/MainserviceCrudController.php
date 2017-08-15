@@ -46,34 +46,68 @@ class MainserviceCrudController extends CrudController
             'name' => 'title',
             'label' => 'Название',
             'type' => 'text',
+            'tab' => 'Контент',
             ]);
         $this->crud->addField([
             'name' => 'slug',
             'label' => 'Slug (URL)',
             'type' => 'text',
             'attributes' => ['readonly' => 'readonly'],
+            'tab' => 'Контент',
             ], 'update');
         $this->crud->addField([
             'name' => 'description',
             'label' => 'Описание',
             'type' => 'textarea',
             'attributes' => ['rows' => 4],
+            'tab' => 'Контент',
             ]);
         $this->crud->addField([
             'name' => 'content',
             'label' => 'Текст',
             'type' => 'ckeditor',
             'extra_plugins' => ['oembed', 'widget', 'justify', 'preview', 'lineutils'],
+            'tab' => 'Контент',
             ]);
         $this->crud->addField([
             'name' => 'image',
             'label' => 'Изображение',
-            'type' => 'upload',
+            'type' => 'image',
+            'crop' => false,
+            // 'aspect_ratio' => 1,
+            'upload' => true,
+            'tab' => 'Контент',
             ]);
         $this->crud->addField([
             'name' => 'status',
             'label' => 'Статус',
             'type' => 'enum',
+            'tab' => 'Контент',
+            ]);
+
+        $this->crud->addFields([
+            [
+            'name' => 'seo_separator',
+            'type' => 'custom_html',
+            'value' => '<h3>SEO</h3><h4>если нету, будет использоватся автогенирация</h4><hr>',
+            'tab' => 'Seo'
+            ],
+            [
+            'label' => 'Название (title)',
+            'type' => 'text',
+            'name' => 'seo_title',
+            'count_down' => 80,
+            'attributes' => ['maxlength' => 80],
+            'tab' => 'Seo'
+            ],
+            [
+            'label' => 'Описание (description)',
+            'type' => 'textarea',
+            'name' => 'seo_description',
+            'count_down' => 155,
+            'attributes' => ['maxlength' => 155, 'rows' => 3],
+            'tab' => 'Seo'
+            ],
             ]);
 
         $this->crud->enableAjaxTable();

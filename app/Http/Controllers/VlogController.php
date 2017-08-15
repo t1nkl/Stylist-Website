@@ -24,7 +24,7 @@ class VlogController extends Controller
      */
     public function index( Request $request ) 
     {   
-        $all_vlogs = Vlog::where('status', 'PUBLISHED')->orderBy('date', "desc")->get()->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
+        $all_vlogs = Vlog::getAllVlogs()->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
         if($request->ajax()) {
             return [
                 'all_vlogs' => view('vlog_ajax')->with(compact('all_vlogs'))->render(),

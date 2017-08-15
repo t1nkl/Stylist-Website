@@ -27,7 +27,7 @@
 		</div>
 		<div class="col-md-4 col-xs-12 footer-gallery">
 			<h2 class="heading-txt-ft">Галерея</h2>
-			@foreach(App\Models\Project::getLastPortfolio(6) as $lastportfolio)
+			@foreach(App\Models\Portfolio::getLastPortfolio(6) as $lastportfolio)
 				<img src="{{$lastportfolio->image}}" alt="{{$lastportfolio->title}}" class="gallery-illustration">
 			@endforeach
 		</div>

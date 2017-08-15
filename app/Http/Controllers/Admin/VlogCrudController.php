@@ -102,18 +102,6 @@ class VlogCrudController extends CrudController
             ],
             ]);
         $this->crud->addField([
-            'label' => 'Теги',
-            'type' => 'select2_multiple',
-                                'name' => 'tags', // the method that defines the relationship in your Model
-                                'entity' => 'tags', // the method that defines the relationship in your Model
-                                'attribute' => 'name', // foreign key attribute that is shown to user
-                                'model' => "App\Models\Tag", // foreign key model
-                                'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
-                                'wrapperAttributes' => [
-                                'class' => 'form-group col-md-6',
-                                ],
-                                ]);
-        $this->crud->addField([
             'name' => 'status',
             'label' => 'Статус',
             'type' => 'enum',

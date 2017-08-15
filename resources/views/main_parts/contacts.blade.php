@@ -10,20 +10,23 @@
 		<a href="@lang('messages.footer.youtube')" class="sm-link-ft"><i class="fa fa-youtube" aria-hidden="true"></i></a>
 	</div>
 	<div class="contact-form">
-		<form action="#" method="post" class="form-itself">
+		<form action="javascript:contact()" class="form-itself" id="contactform">
 			<div class="contact-form1">
-				<input type="text" name="Name" placeholder="Имя" required="">
+				<input type="text" name="name" id="name" placeholder="Имя" required="">
 			</div>
 			<div class="contact-form2">
-				<input type="text" name="Phone" placeholder="Телефон" required="">
+				<input type="text" name="phone" id="phone" placeholder="Телефон" required="">
 			</div>
 			<div class="contact-form3">
-				<input type="email" name="Email" placeholder="E-mail" required="">
+				<input type="email" name="email" id="email" placeholder="E-mail" required="">
 			</div>
 			<div class="contact-form4">
-				<textarea name="" placeholder="Сообщение" id="" cols="30" rows="10"></textarea>
+				<textarea name="content" id="content" placeholder="Сообщение" cols="30" rows="10"></textarea>
 			</div>
 			<input type="submit" class="send-message-input" value="Отправить сообщение" >
 		</form>
+		<div class="nesto-message">
+			<h2 class="nesto-response" id="h2"></h2>
+		</div>
 	</div>
 </div>

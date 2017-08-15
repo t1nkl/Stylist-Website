@@ -16,7 +16,7 @@ class BlogController extends Controller
      */
     public function index(Request $request)
     {
-        $all_articles = Article::where('status', 'PUBLISHED')->orderBy('date', "desc")->get()->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
+        $all_articles = Article::getLastBlog(0)->forPage($page = request()->has('page') ? request()->page : 1, 3)->all();
         if($request->ajax()) {
             return [
                 'all_articles' => view('blog_ajax')->with(compact('all_articles'))->render(),
@@ -58,11 +58,14 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $article = Article::where('slug', $id)->first();
-        $services = Service::all();
+        $article = Article::findBySlug($id);
+        if (!$article)
+        {
+            abort(404);
+        }
         $categorys = Category::orderBy('created_at', "asc")->get();
         
-        return view('blog_single', compact('article', 'services', 'categorys'));
+        return view('blog_single', compact('article', 'categorys'));
     }
 
     /**

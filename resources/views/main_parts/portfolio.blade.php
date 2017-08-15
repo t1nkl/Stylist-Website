@@ -7,7 +7,7 @@
     	<div class="my-gallery endless-pagination all_portfolios" data-next-page="2">
     		@foreach($all_portfolios as $portfolio)
     		<figure class="col-md-3 portfolio-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    	      <a href="/{{ $portfolio->image }}" itemprop="contentUrl" data-size="600x800">
+    	      <a href="{{ $portfolio->image }}" itemprop="contentUrl" data-size="600x800">
     	        <img src="{{ $portfolio->image }}" itemprop="thumbnail" alt="Image description" />
     			<div class="portfolio-caption-2">
     				<div class="popup"></div>
@@ -21,14 +21,13 @@
     		@endforeach
 
             {{--{!! $all_portfolios->render() !!}--}}
-
-            
+ 
     	</div>
-            <div class="load-more col-md-3">
-                <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-portfolio">Загрузить еще</p></a>
-            </div>
-            <div class="load"></div>
-    </div> <!-- postWrap -->
+        <div class="load-more col-md-3">
+            <a onclick="fetchPosts()" class="load-more-link"><p class="load-more-portfolio">Загрузить еще</p></a>
+        </div>
+        <div class="load"></div>
+    </div>
 </div>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="pswp__bg"></div>

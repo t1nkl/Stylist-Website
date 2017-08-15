@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\DB;
 use Backpack\Base\app\Http\Controllers\Controller as Controller;
-use App\Models\{VisitorId, VisitorIp};
+use App\Models\{Lid, Contact, VisitorId, VisitorIp};
 
 class CustomAdminController extends Controller
 {
@@ -25,6 +25,9 @@ class CustomAdminController extends Controller
      */
     public function dashboard()
     {
+        $this->data['contact'] = Contact::all()->count();
+        $this->data['lid'] = Lid::all()->count();
+
         $this->data['visitorid_browser'] = VisitorId::selectRaw('count(id) as value, browser')->groupBy('browser')->get()->toArray();
         $this->data['visitorid_os'] = VisitorId::selectRaw('count(id) as value, os')->groupBy('os')->get()->toArray();
 

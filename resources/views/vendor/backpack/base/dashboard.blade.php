@@ -305,6 +305,30 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-lg-3 col-xs-6">
+                        <div class="small-box bg-teal">
+                            <div class="inner">
+                                <h3>{{$contact}}</h3>
+                                <p>Заявок</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/contact') }}" class="small-box-footer">Больше <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-6">
+                        <div class="small-box bg-teal">
+                            <div class="inner">
+                                <h3>{{$lid}}</h3>
+                                <p>Подписчиков</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/lid') }}" class="small-box-footer">Больше <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-6">
                         <div class="dropdown">
                             <div class="small-box bg-teal">
                                 <div class="inner">
