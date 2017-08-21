@@ -1,6 +1,6 @@
 (function(){
   CKEDITOR.plugins.add('btgrid', {
-      lang: 'en,ru,fr,nl',
+      lang: 'en,ru,fr,nl,de',
       requires: 'widget,dialog',
       icons: 'btgrid',
       init: function(editor) {
@@ -8,9 +8,8 @@
        var lang = editor.lang.btgrid;
 
        CKEDITOR.dialog.add('btgrid',  this.path + 'dialogs/btgrid.js');
-          if ( editor.addContentsCss ) {
-              editor.addContentsCss(this.path + 'styles/editor.css');
-          }
+
+       editor.addContentsCss( this.path + 'styles/editor.css');
        // Add widget
        editor.ui.addButton('btgrid', {
          label: lang.createBtGrid,

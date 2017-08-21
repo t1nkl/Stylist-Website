@@ -92,7 +92,7 @@ class ArticleCrudController extends CrudController
             'name' => 'content',
             'label' => 'Текст',
             'type' => 'ckeditor',
-            'extra_plugins' => ['oembed', 'widget', 'justify', 'preview'],
+            'extra_plugins' => ['oembed', 'widget', 'justify', 'btgrid'],
             ]);
         $this->crud->addField([
             'name' => 'image',

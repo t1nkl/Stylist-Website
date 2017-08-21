@@ -66,7 +66,7 @@ class MainserviceCrudController extends CrudController
             'name' => 'content',
             'label' => 'Текст',
             'type' => 'ckeditor',
-            'extra_plugins' => ['oembed', 'widget', 'justify', 'preview', 'lineutils'],
+            'extra_plugins' => ['oembed', 'widget', 'justify', 'btgrid'],
             'tab' => 'Контент',
             ]);
         $this->crud->addField([

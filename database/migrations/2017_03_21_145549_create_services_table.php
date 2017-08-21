@@ -24,7 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('slug')->default('');
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
-            $table->string('image')->default('');
+            $table->string('image')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
 
             $table->text('seo_title')->nullable();

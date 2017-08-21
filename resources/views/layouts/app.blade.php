@@ -21,7 +21,7 @@
 
 	@include('includes.header')
 
-	<main class="container-fluid main-content">
+	<main class="container-fluid main-content contentCustomSet">
 
 		@yield('content')
 

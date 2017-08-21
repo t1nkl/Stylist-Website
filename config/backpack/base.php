@@ -12,11 +12,11 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'Stylist',
+    'project_name' => 'ANNA KI',
 
     // Menu logos
-    'logo_lg'   => '<b>Sty</b>list',
-    'logo_mini' => '<b>S</b>l',
+    'logo_lg'   => '<b>ANNA</b> KI',
+    'logo_mini' => '<b>A</b>K',
 
     // Developer or company name. Shown in footer.
     'developer_name' => 'LeoDigital',

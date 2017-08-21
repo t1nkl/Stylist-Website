@@ -2,7 +2,7 @@
 
 <header class="container-fluid header-content">
     <div class="row" id="header-navigation">
-        <nav class="header-menu-bl col-md-12 navbar navbar-toggleable-md justify-content-center">
+        <nav class="header-menu-bl col-md-12 navbar navbar-toggleable-md justify-content-center navbarProp">
             <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navdrop" aria-controls="navdrop" aria-expanded="false" aria-label="Toggle navigation">
             </button>
             <div class="collapse navbar-collapse main-navigation" id="navdrop">
@@ -28,7 +28,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="logo-link" href="#"><img src="/img/logo.svg" class="main-logo-girl" alt=""></a>
-                        <a class="logo-anna-ki-fixed" href="#"><h1 class="logo-fixed">ANNA KI</h1></a>
+                        <a class="logo-anna-ki-fixed" href="#"><div class="logo-fixed"></div></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/blog') }}">Блог</a>
@@ -57,7 +57,7 @@
 
 <header class="container-fluid header-content">
     <div class="row" id="header-navigation">
-        <nav class="header-menu-bl col-md-12 navbar navbar-toggleable-md justify-content-center">
+        <nav class="header-menu-bl col-md-12 navbar navbar-toggleable-md justify-content-center navbarProp">
             <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navdrop" aria-controls="navdrop" aria-expanded="false" aria-label="Toggle navigation">
             </button>
             <div class="collapse navbar-collapse main-navigation" id="navdrop">
@@ -82,7 +82,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="logo-anna-ki-sinf" href="{{ url('/') }}"><h1 class="">ANNA KI</h1></a>
+                        <a class="logo-anna-ki-sinf" href="{{ url('/') }}"><div class="logo-fixed"></div></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/blog') }}">Блог</a>

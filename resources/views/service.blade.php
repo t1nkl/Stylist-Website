@@ -12,20 +12,6 @@
 
 @section('style_css')
 <link type="text/css" rel="stylesheet" href="{{ asset('izimodal/css/iziModal.min.css') }}"/>
-<style type="text/css">
-    .service-page-bl{
-        padding-right: 1px;
-        padding-left: 1px;
-    }
-    .blog-content p img{
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-    .blog-content p {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-</style>
 @endsection
 
 
@@ -93,8 +79,9 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <h1 class="text-center"><a role="button" class="btn btn-primary btn-lg trigger" >Contact Us</a></h1>
+    <div class="row buttonsModal">
+        <a role="button" class="service-viewmore-one subServiceOrder_But buttonOrderServ trigger">Заказать</a>
+        <a role="button" class="service-viewmore-one subServiceOrder_But buttonCallServ" href="tel:+1234567890">Позвонить</a>
     </div>
 </div>
 

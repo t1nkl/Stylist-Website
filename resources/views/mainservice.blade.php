@@ -11,20 +11,6 @@
 
 
 @section('style_css')
-<style type="text/css">
-    .service-page-bl{
-        padding-right: 1px;
-        padding-left: 1px;
-    }
-    .blog-content p img{
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-    .blog-content p {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-</style>
 @endsection
 
 
@@ -37,15 +23,15 @@
 @include('includes.breadcrumbs', ['crumbs' => [$service->title]])
 
 @foreach($service->services as $services)
-<div class="row">
-    <div class="col-md-12" style="display:flex;">
-        <div class="col-md-6">
+<div class="row subServiceOrder">
+    <div class="col-md-12 subServiceOrder_row" style="display:flex;">
+        <div class="col-md-6 col-sm-12 col-xs-12 subServiceOrder_first">
             <img src="{{ $services->image }}" alt="{{ $services->title }}" class="service-single-illustration">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-12 col-xs-12 subServiceOrder_second">
             <h2 class="service-single-heading">{{$services->title}}</h2>
             <div class="">{!!$services->description!!}</div>
-            <a href="/service/{{ $service->slug }}/{{ $services->slug }}">ССЫЛКА</a>
+            <a class="service-viewmore-one subServiceOrder_But" href="/service/{{ $service->slug }}/{{ $services->slug }}">Читать далее...</a>
         </div>
     </div>
 </div>

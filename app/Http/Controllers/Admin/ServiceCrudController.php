@@ -52,7 +52,7 @@ class ServiceCrudController extends CrudController
             'name' => 'slug',
             'label' => 'Slug (URL)',
             'type' => 'text',
-            'attributes' => ['readonly' => 'readonly'],
+            // 'attributes' => ['readonly' => 'readonly'],
             'tab' => 'Контент',
             ], 'update');
         $this->crud->addField([
@@ -66,16 +66,7 @@ class ServiceCrudController extends CrudController
             'name' => 'content',
             'label' => 'Текст',
             'type' => 'ckeditor',
-            'extra_plugins' => ['oembed', 'widget', 'justify', 'preview', 'lineutils'],
-            'tab' => 'Контент',
-            ]);
-        $this->crud->addField([
-            'name' => 'image',
-            'label' => 'Изображение',
-            'type' => 'image',
-            'crop' => false,
-            // 'aspect_ratio' => 1,
-            'upload' => true,
+            'extra_plugins' => ['oembed', 'widget', 'justify', 'btgrid'],
             'tab' => 'Контент',
             ]);
         $this->crud->addField([
@@ -99,7 +90,16 @@ class ServiceCrudController extends CrudController
             ],
             'tab' => 'Контент',
             ]);
-
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Изображение',
+            'type' => 'image',
+            'crop' => false,
+            // 'aspect_ratio' => 1,
+            'upload' => true,
+            'tab' => 'Контент',
+            ]);
+        
         $this->crud->addFields([
             [
             'name' => 'seo_separator',

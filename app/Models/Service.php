@@ -94,7 +94,7 @@ class Service extends Model
         $attribute_name = "image";
         $disk = "uploads";
         $destination_path = "Service_Gallery/".$this->getSlugOrTitleAttribute();
-        $image_width = 675;
+        $image_width = 700;
 
         if ($value==null) {
             // delete the image from disk
@@ -108,14 +108,14 @@ class Service extends Model
         if (starts_with($value, 'data:image'))
         {
             // 0. Make the image
-            $image = \Image::make($value)->resize($image_width, NULL, function ($constraint) {
+            $image = \Image::make($value)->encode('jpg', 100)->resize($image_width, NULL, function ($constraint) {
                 $constraint->aspectRatio();
             });
             // 1. Generate a filename.
-            $filename = md5($value.time()).'.jpg';
+            $filename = md5(time()).'.jpg';
 
             // 2. Store the image on disk.
-            \Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());
+            \Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream('jpg', 100));
 
             // 3. Save the path to the database
             $this->attributes[$attribute_name] = '/'.$disk.'/'.$destination_path.'/'.$filename;

@@ -44,7 +44,7 @@ class HomeController extends Controller
                 'less_then' => count($all_portfolios) < 8
             ];
         }
-        $reviewshows = Review::all();
+        $reviewshows = Review::orderBy('rgt')->get();
         $blogs = Article::getLastBlog(3);
         
         return view('home', compact('abouts', 'all_portfolios', 'services', 'reviewshows', 'blogs'));

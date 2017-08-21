@@ -27,6 +27,10 @@ class ReviewCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
+        $this->crud->allowAccess('reorder');
+        $this->crud->enableReorder('name', 1);
+        $this->crud->orderBy('rgt');
+
 		// ------ CRUD COLUMNS
         $this->crud->addColumn([
             'name' => 'name',

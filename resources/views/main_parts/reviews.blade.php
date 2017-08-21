@@ -15,8 +15,10 @@
 
 			@foreach($reviewshows as $key => $reviewshow)
 			<div class="slide">
-				<div class=" @if($key == 0) active @endif ">
-					<div class="col-md-4"><img src="{{ $reviewshow->image }}" class="" alt=""></div>
+				<div class=" @if($key == 0) active @endif slideDescription">
+					@if(isset($reviewshow->image))
+						<div class="col-md-4 slideImg"><img src="{{ $reviewshow->image }}" class="" alt=""></div>
+					@endif
 					<div class="col-md-8 ">
 						<h3>{{ $reviewshow->name }}</h3>
 						<p class="review-txt">{{ $reviewshow->content }}</p>
