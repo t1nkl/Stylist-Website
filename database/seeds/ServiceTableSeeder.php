@@ -15,7 +15,7 @@ public function run()
     DB::table('mainservices')->insert([
         'title' => 'Тестовое название 1',
         'slug' => 'test-name-1',
-        'description' => 'Тестовое описание',
+        'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
         'content' => '<div class="btgrid">
         <div class="row row-1">
             <div class="col col-md-6">
@@ -87,7 +87,7 @@ public function run()
 DB::table('mainservices')->insert([
     'title' => 'Тестовое название 2',
     'slug' => 'test-name-2',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">
@@ -159,7 +159,7 @@ DB::table('mainservices')->insert([
 DB::table('mainservices')->insert([
     'title' => 'Тестовое название 3',
     'slug' => 'test-name-3',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">
@@ -232,7 +232,7 @@ DB::table('mainservices')->insert([
 DB::table('services')->insert([
     'title' => 'Тестовое название 3',
     'slug' => 'test-name-3',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">
@@ -305,7 +305,7 @@ DB::table('services')->insert([
 DB::table('services')->insert([
     'title' => 'Тестовое название 4',
     'slug' => 'test-name-4',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">
@@ -378,7 +378,7 @@ DB::table('services')->insert([
 DB::table('services')->insert([
     'title' => 'Тестовое название 5',
     'slug' => 'test-name-5',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">
@@ -451,7 +451,7 @@ DB::table('services')->insert([
 DB::table('services')->insert([
     'title' => 'Тестовое название 6',
     'slug' => 'test-name-6',
-    'description' => 'Тестовое описание',
+    'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
     'content' => '<div class="btgrid">
     <div class="row row-1">
         <div class="col col-md-6">

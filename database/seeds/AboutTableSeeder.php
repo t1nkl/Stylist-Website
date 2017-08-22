@@ -14,7 +14,7 @@ class AboutTableSeeder extends Seeder
     {
         DB::table('abouts')->insert([
             'title' => 'Тестовое название 1',
-            'description' => 'Тестовое описание',
+            'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
             'icon' => 'fa-certificate',
             'status' => 'PUBLISHED',
             'created_at' => \Carbon\Carbon::now(),
@@ -22,7 +22,7 @@ class AboutTableSeeder extends Seeder
         ]);
         DB::table('abouts')->insert([
             'title' => 'Тестовое название 2',
-            'description' => 'Тестовое описание',
+            'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
             'icon' => 'fa-certificate',
             'status' => 'PUBLISHED',
             'created_at' => \Carbon\Carbon::now(),
@@ -30,7 +30,7 @@ class AboutTableSeeder extends Seeder
         ]);
         DB::table('abouts')->insert([
             'title' => 'Тестовое название 3',
-            'description' => 'Тестовое описание',
+            'description' => 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
             'icon' => 'fa-certificate',
             'status' => 'PUBLISHED',
             'created_at' => \Carbon\Carbon::now(),

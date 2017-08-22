@@ -1422,11 +1422,11 @@ textarea {
 
 /*FOOTER*/
 .footer-content {
-	padding-top:100px;
+	padding-top:50px;
 	padding-bottom: 20px;
 	margin:0;
 	color:#fff;
-   background-color: #ccc;
+   background-color: #633b7a;
 }
 .description-ft {
     font-weight: 300;
@@ -1489,25 +1489,50 @@ textarea {
 	width:100%;
 }
 .dates {
-	color:#000;
+	color:#999999;
 }
 .comments {
-	color: #000;
+	color: #999999;
+    margin-left: 30px;
+}
+.daterRow {
+    min-width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
 }
 .social-media-ft {
 	display:flex;
 	flex-wrap:wrap;
 	flex-direction: row;
 	justify-content: flex-start;
+    margin-bottom: 30px;
+}
+.social-media-ft a {
+    color: #fff;
 }
 .sm-link-ft {
 	display: flex;
 	margin:2px;
 	width: 40px;
 	height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fff;
 }
+.sm-link-ft:hover {
+    border: 1px solid #0275d8
+}
+.sm-link-ft + .sm-link-ft {
+    margin-left: 15px;
+}
+
 .sm-link-ft > i {
     font-size: 25px;
+    margin: auto;
 }
 .sm-link-ft:hover > i {
     font-size: 25px;
